@@ -1,12 +1,6 @@
-function descendingOrder(n) {
-  num = n
-    .toString()
-    .split("")
-    .map((x) => +x)
-    .sort((a, b) => b - a)
-    .join("");
-  return +num;
+function isSquare(n) {
+  return Math.sqrt(n) % 1 === 0;
 }
 
-console.log(descendingOrder(1021));
-console.log(descendingOrder(0));
+console.log(isSquare(25));
+console.log(isSquare(26));
