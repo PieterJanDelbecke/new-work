@@ -1,5 +1,12 @@
-function filter_list(l) {
-  return l.filter((x) => typeof x == "number");
+function descendingOrder(n) {
+  num = n
+    .toString()
+    .split("")
+    .map((x) => +x)
+    .sort((a, b) => b - a)
+    .join("");
+  return +num;
 }
 
-console.log(filter_list([1, 2, "a", "b"]));
+console.log(descendingOrder(1021));
+console.log(descendingOrder(0));
