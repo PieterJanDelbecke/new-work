@@ -1,10 +1,5 @@
-function squareDigits(num) {
-  const arr = num
-    .toString()
-    .split("")
-    .map((x) => Math.pow(+x, 2))
-    .join("");
-  return +arr;
+function filter_list(l) {
+  return l.filter((x) => typeof x == "number");
 }
 
-console.log(squareDigits(3212));
+console.log(filter_list([1, 2, "a", "b"]));
