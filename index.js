@@ -1,11 +1,15 @@
-function getMiddle(s) {
-  let middle = Math.floor(s.length / 2);
-  return s.length % 2 === 0
-    ? s.slice(middle - 1, middle + 1)
-    : s.slice(middle, middle + 1);
+function XO(str) {
+  let x = 0;
+  let o = 0;
+  const arr = str.toLowerCase().split("");
+  arr.forEach((letter) => {
+    if (letter === "x") x++;
+    if (letter === "o") o++;
+  });
+  return x === o ? true : false;
 }
 
-console.log(getMiddle("es"));
-console.log(getMiddle("A"));
-console.log(getMiddle("testing"));
-console.log(getMiddle("middle"));
+console.log(XO("xo"));
+console.log(XO("xO"));
+console.log(XO("xxxoo"));
+console.log(XO("xxOo"));
