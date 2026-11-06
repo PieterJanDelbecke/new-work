@@ -1,15 +1,10 @@
-function XO(str) {
-  let x = 0;
-  let o = 0;
-  const arr = str.toLowerCase().split("");
-  arr.forEach((letter) => {
-    if (letter === "x") x++;
-    if (letter === "o") o++;
-  });
-  return x === o ? true : false;
+function findShort(s) {
+  return Math.min(...s.split(" ").map((x) => x.length));
 }
 
-console.log(XO("xo"));
-console.log(XO("xO"));
-console.log(XO("xxxoo"));
-console.log(XO("xxOo"));
+console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+console.log(
+  findShort(
+    "turns out random test cases are easier than writing out basic ones I",
+  ),
+);
