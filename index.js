@@ -1,13 +1,7 @@
-function maskify(cc) {
-  let count = cc.length;
-  if (count > 4) {
-    firstPart = "#".repeat(count - 4);
-    lastPart = cc.slice(count - 4, count);
-    return `${firstPart}${lastPart}`;
-  } else {
-    return cc;
-  }
+function sumTwoSmallestNumbers(numbers) {
+  const arr = numbers.sort((a, b) => a - b);
+  return arr[0] + arr[1];
 }
 
-console.log(maskify("4556364607935616"));
-console.log(maskify("616"));
+console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]));
+console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
