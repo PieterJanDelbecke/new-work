@@ -1,7 +1,12 @@
-function sumTwoSmallestNumbers(numbers) {
-  const arr = numbers.sort((a, b) => a - b);
-  return arr[0] + arr[1];
+function getSum(a, b) {
+  const [x, y] = [a, b].sort((a, b) => a - b);
+  const arr = [];
+  for (let i = x; i <= y; i++) {
+    arr.push(i);
+  }
+  return arr.reduce((sum, x) => sum + x, 0);
 }
 
-console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]));
-console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
+console.log(getSum(0, -1));
+console.log(getSum(-1, 2));
+console.log(getSum(2, 2));
