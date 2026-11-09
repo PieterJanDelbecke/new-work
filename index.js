@@ -1,5 +1,13 @@
-function friend(friends) {
-  return friends.filter((friend) => friend.length === 4);
+function printerError(s) {
+  const regex = /[a-m]/g;
+  let found = s.match(regex);
+  found = !found ? [] : found;
+  return `${s.length - found.length}/${s.length}`;
 }
 
-console.log(friend(["Ryan", "Kieran", "Mark"]));
+console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"));
+console.log(printerError("aaabbbbhaijjjm"));
+console.log(printerError("zzz"));
+console.log(
+  printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"),
+);
