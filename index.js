@@ -1,13 +1,15 @@
-function printerError(s) {
-  const regex = /[a-m]/g;
-  let found = s.match(regex);
-  found = !found ? [] : found;
-  return `${s.length - found.length}/${s.length}`;
+function validatePIN(pin) {
+  const regex = /\D/g;
+  const result = pin.match(regex);
+  if (!result) {
+    return pin.length === 4 || pin.length === 6 ? true : false;
+  } else {
+    return false;
+  }
 }
 
-console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"));
-console.log(printerError("aaabbbbhaijjjm"));
-console.log(printerError("zzz"));
-console.log(
-  printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"),
-);
+console.log(validatePIN("1234"));
+console.log(validatePIN("12345"));
+console.log(validatePIN("a234"));
+console.log(validatePIN("-1.234"));
+console.log(validatePIN(".234"));
